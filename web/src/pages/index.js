@@ -1,37 +1,16 @@
-import React from "react"
-import { graphql, Link } from "gatsby"
+import React from "react";
 
-import Layout from "../components/layout"
-import Image from "../components/image"
-import SEO from "../components/seo"
+import Layout from "../components/layout";
+import SEO from "../components/seo";
+import ProjectsGrid from "../components/ProjectsGrid";
 
-const IndexPage = ({ data }) => {
-  const projects = data.projects.nodes
-  console.log(projects)
+const IndexPage = () => {
   return (
     <Layout>
       <SEO title="Home" />
-      {projects.map(project => {
-        return (
-          <>
-            <h2>{project.name}</h2>
-            <h3>{project.client}</h3>
-          </>
-        )
-      })}
+      <ProjectsGrid />
     </Layout>
-  )
-}
+  );
+};
 
-export default IndexPage
-
-export const query = graphql`
-  query {
-    projects: allSanityProject {
-      nodes {
-        name
-        client
-      }
-    }
-  }
-`
+export default IndexPage;
