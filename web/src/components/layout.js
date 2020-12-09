@@ -15,7 +15,7 @@ import "fontsource-lato/400.css";
 import "fontsource-lato/900.css";
 
 import Header from "./header";
-import "./newlayout.css";
+import "./layout.css";
 
 const StyledLayout = styled.div`
   h1,
@@ -29,10 +29,10 @@ const StyledLayout = styled.div`
   h3 {
     text-transform: uppercase;
   }
-  /* width: 90%; */
-  /* display: flex; */
-  /* align-items: center;
-  flex-direction: column; */
+`;
+
+const StyledMain = styled.div`
+  padding: 10vh 5%;
 `;
 
 const Layout = ({ children }) => {
@@ -49,10 +49,10 @@ const Layout = ({ children }) => {
   return (
     <StyledLayout>
       <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
-      <div>
+      <StyledMain>
         <main>{children}</main>
         <footer>© {new Date().getFullYear()}, Jeremy Ludwig</footer>
-      </div>
+      </StyledMain>
     </StyledLayout>
   );
 };
