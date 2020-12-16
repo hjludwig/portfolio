@@ -2,22 +2,15 @@ import React from "react";
 import Img from "gatsby-image";
 import styled from "styled-components";
 import { Link } from "gatsby";
+import { SolidButton, OutlineButton } from "./common/Button";
 
 const StyledProject = styled.div`
-  /* display: block; */
-  /* Take your row sizing not from the pizzaStyles div, but from the  PizzaGridStyles grid */
-  /* @supports not (grid-template-rows: subgrid) {
-    --rows: 1fr auto;
-  }
-  grid-template-rows: var(--rows, subgrid);
-  /* grid-row: span 4; */
-  /* grid-gap: 1rem; */
   box-shadow: #ccc 0 0 5px 0;
-  > :not(img) {
-    padding: 0 1rem;
+  > :not(.gatsby-image-wrapper) {
+    margin: 1rem;
   }
-  > :not(h3) {
-    margin-bottom: 1rem;
+  h3 {
+    margin-bottom: 0;
   }
   ul {
     list-style-type: none;
@@ -29,6 +22,12 @@ const StyledProject = styled.div`
     padding: 0.25rem;
     margin-right: 0.25rem;
   }
+  h4 span {
+    font-weight: normal;
+  }
+  button {
+    align-self: flex-end;
+  }
 `;
 
 const SingleProject = ({ project }) => {
@@ -37,16 +36,23 @@ const SingleProject = ({ project }) => {
     <StyledProject>
       <Img fluid={image.asset.fluid} alt={name} />
       <h3>{name}</h3>
-      <h4>{client}</h4>
+      {!client || client === name ? (
+        ""
+      ) : (
+        <h4>
+          {client != "Personal project" ? <span>Client: </span> : ""}
+          {client}
+        </h4>
+      )}
       <ul>
         {tools.map(tool => (
           <li key={tool.id}>{tool.tool}</li>
         ))}
       </ul>
       <p>{description}</p>
-      <button>
+      <OutlineButton secondary>
         <Link to={slug.current}>View</Link>
-      </button>
+      </OutlineButton>
     </StyledProject>
   );
 };

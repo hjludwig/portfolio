@@ -3,10 +3,29 @@ import { useStaticQuery, graphql } from "gatsby";
 import SingleProject from "./SingleProject";
 import styled from "styled-components";
 
+const StyledContainer = styled.section`
+  padding: 10rem 10%;
+  h2 {
+    text-align: center;
+    font-size: 3rem;
+    margin-bottom: 2em;
+    color: var(--blue-300);
+    :after {
+      display: block;
+      content: "";
+      width: 3ch;
+      border-top: 2px solid;
+      margin: 2rem auto;
+    }
+  }
+  .gatsby-image-wrapper {
+    height: 200px;
+  }
+`;
 const StyledProjectsGrid = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 1rem;
+  gap: 2rem;
   /* grid-auto-rows: 200px; */
 `;
 
@@ -37,18 +56,16 @@ const ProjectsGrid = () => {
       }
     }
   `);
-  console.log(data);
   const projects = data.projects.nodes;
-  console.log(projects);
   return (
-    <>
+    <StyledContainer>
       <h2>Projects</h2>
       <StyledProjectsGrid>
         {projects.map(project => {
           return <SingleProject project={project} />;
         })}
       </StyledProjectsGrid>
-    </>
+    </StyledContainer>
   );
 };
 

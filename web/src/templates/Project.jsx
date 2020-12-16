@@ -20,15 +20,13 @@ const StyledProject = styled.div`
 `;
 
 const Project = ({ data }) => {
-  const { name, client, image, tools, description } = data.project;
+  const { name, client, image, tools, description, link } = data.project;
   return (
     <Layout>
       <StyledProject>
         <header>
-          {" "}
           <h3>{name}</h3>
-          {/* TODO: Conditional for client render */}
-          <h4>{client}</h4>
+          {!client || client === name ? "" : <h4>{client}</h4>}
         </header>
 
         <Img fluid={image.asset.fluid} alt={name} />
@@ -40,9 +38,13 @@ const Project = ({ data }) => {
             ))}
           </ul>
           <p>{description}</p>
-          <button>
-            <a href="#">Visit</a>
-          </button>
+          {!link || (
+            <button>
+              <a href={link} target="blank">
+                Visit
+              </a>
+            </button>
+          )}
         </div>
       </StyledProject>
     </Layout>
@@ -65,6 +67,7 @@ export const query = graphql`
         }
       }
       description
+      link
       tools {
         tool
         id

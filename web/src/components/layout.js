@@ -9,13 +9,15 @@ import React from "react";
 import PropTypes from "prop-types";
 import { useStaticQuery, graphql } from "gatsby";
 import styled from "styled-components";
-import "fontsource-lora/700.css";
+import "fontsource-lora/400.css";
 import "fontsource-lato/300.css";
 import "fontsource-lato/400.css";
 import "fontsource-lato/900.css";
 
-import Header from "./header";
-import "./layout.css";
+import Header from "./Header";
+// import "../styles/global.css";
+import { Global } from "../styles/global.css.js";
+import Footer from "./Footer";
 
 const StyledLayout = styled.div`
   h1,
@@ -31,10 +33,6 @@ const StyledLayout = styled.div`
   }
 `;
 
-const StyledMain = styled.div`
-  padding: 10vh 5%;
-`;
-
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
@@ -47,13 +45,14 @@ const Layout = ({ children }) => {
   `);
 
   return (
-    <StyledLayout>
-      <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
-      <StyledMain>
+    <>
+      <Global />
+      <StyledLayout>
+        <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
         <main>{children}</main>
-        <footer>© {new Date().getFullYear()}, Jeremy Ludwig</footer>
-      </StyledMain>
-    </StyledLayout>
+        <Footer />
+      </StyledLayout>
+    </>
   );
 };
 

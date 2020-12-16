@@ -1,15 +1,48 @@
-import React from 'react';
-import Layout from '../components/layout';
-import SEO from '../components/seo'
+import React from "react";
+import Layout from "../components/layout";
+import SEO from "../components/seo";
+import { graphql, useStaticQuery } from "gatsby";
+import Image from "gatsby-image";
+import styled from "styled-components";
+
+const StyledBio = styled.section`
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  gap: 10%;
+`;
+const StyledPage = styled.div`
+  margin: 6rem 10%;
+`;
 
 const About = () => {
-    return ( 
-        <Layout>
-            <SEO title="about" />
-            <h1>About me</h1>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Incidunt dolores enim laborum reprehenderit. Doloremque animi dolorum maiores laudantium quisquam, quidem eveniet ea, enim pariatur officiis deleniti voluptate nisi debitis blanditiis, quia nihil ad sint itaque autem fuga distinctio. Nisi, quia.</p>
-        </Layout>
-     );
-}
- 
+  const data = useStaticQuery(graphql`
+    query {
+      profile: sanityProfile {
+        bio
+        image {
+          asset {
+            fluid {
+              ...GatsbySanityImageFluid
+            }
+          }
+        }
+      }
+    }
+  `);
+  const { bio, image } = data.profile;
+  return (
+    <Layout>
+      <StyledPage>
+        <SEO title="about" />
+        <h1>About me</h1>
+        <StyledBio>
+          {" "}
+          <Image fluid={image.asset.fluid} />
+          <p>{bio}</p>
+        </StyledBio>
+      </StyledPage>
+    </Layout>
+  );
+};
+
 export default About;
