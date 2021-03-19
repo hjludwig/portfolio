@@ -5,13 +5,16 @@ import { Link } from "gatsby";
 import { SolidButton, OutlineButton } from "./common/Button";
 
 const StyledProject = styled.div`
+  padding-bottom: 0.5rem;
   box-shadow: #ccc 0 0 5px 0;
+  /* margin: 1.5rem 1rem; */
   > :not(.gatsby-image-wrapper) {
     margin: 1rem;
   }
-  h3 {
-    margin-bottom: 0;
+  .gatsby-image-wrapper {
+    margin-bottom: 1rem;
   }
+
   ul {
     list-style-type: none;
   }
@@ -26,7 +29,6 @@ const StyledProject = styled.div`
     font-weight: normal;
   }
   button {
-    align-self: flex-end;
   }
 `;
 

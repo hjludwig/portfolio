@@ -3,7 +3,6 @@ import PropTypes from "prop-types";
 import React from "react";
 import Navigation from "./Navigation";
 import styled from "styled-components";
-import logo from "../images/logo.svg";
 
 const StyledHeader = styled.header`
   display: flex;
@@ -12,17 +11,23 @@ const StyledHeader = styled.header`
   align-items: center;
   padding: 0 5%;
   border-bottom: 1px solid #eee;
-  .logo {
-    width: 5em;
-    display: block;
+`;
+const Logo = styled.div`
+  color: white;
+  font-size: 2em;
+  background: var(--blue-500);
+  padding: 1em;
+  a {
+    text-decoration: none;
+    color: white;
   }
 `;
 
 const Header = ({ siteTitle }) => (
   <StyledHeader>
-    <Link to="/">
-      <img className="logo" src={logo} />
-    </Link>
+    <Logo>
+      <Link to="/">JL</Link>
+    </Logo>
 
     <Navigation />
   </StyledHeader>

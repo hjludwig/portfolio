@@ -1,6 +1,6 @@
 export default {
     name: "project",
-    title: "Project",
+    title: "Projects",
     type: "document",
     fields: [
         {
@@ -21,6 +21,12 @@ export default {
             name: "client",
             title: "Client",
             type: "string",
+        },
+        {
+            name: "link",
+            title: "Link",
+            type: "url",
+            description: "Enter a link to the external website",
         },
         {
             name: "image",

@@ -19,19 +19,7 @@ import Header from "./Header";
 import { Global } from "../styles/global.css.js";
 import Footer from "./Footer";
 
-const StyledLayout = styled.div`
-  h1,
-  h2 {
-    font-family: "Lora", serif;
-  }
-  h3,
-  h4 {
-    font-family: "Lato", sans-serif;
-  }
-  h3 {
-    text-transform: uppercase;
-  }
-`;
+const StyledLayout = styled.div``;
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`

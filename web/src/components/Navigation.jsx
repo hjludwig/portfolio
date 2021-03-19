@@ -17,6 +17,9 @@ const Navigation = () => {
     <StyledNav>
       <Link to="/about">About</Link>
       <Link to="/contact">Contact</Link>
+      <Link to="/test">Test</Link>
+      <a href="https://github.com">Github</a>
+      <a href="https://linkedin.com">LinkedIn</a>
     </StyledNav>
   );
 };
