@@ -1,24 +1,27 @@
 import React from "react";
 import { graphql, useStaticQuery } from "gatsby";
 import styled from "styled-components";
+import { ms } from "../styles/global.css";
 
 const StyledHero = styled.section`
   height: 90vh;
   display: flex;
   justify-content: center;
   flex-direction: column;
-  background: linear-gradient(122.77deg, #0f2335 20.83%, #050f18 87.52%);
-  color: white;
   padding: 0 10%;
-  /* font-size: 250%; */
-  h2 {
-    font-weight: normal;
-    .name {
-      color: var(--gold);
-    }
+  text-align: center;
+  line-height: 1;
+  > * {
+    letter-spacing: -0.04em;
+  }
+  h1 {
+    font-size: ${ms(6)};
+    margin-bottom: 0;
   }
   .tagline {
-    font-weight: 300;
+    font-size: ${ms(5)};
+    color: var(--dark-grey);
+    margin-top: 0;
   }
 `;
 
@@ -39,13 +42,11 @@ const Hero = () => {
       }
     }
   `);
-  const { name, tagline, bio, image } = data.profile;
+  const { name, tagline } = data.profile;
   return (
     <StyledHero>
-      <h2>
-        Hi. I'm <span className="name">{name}.</span>
-      </h2>
-      <p className="tagline">{tagline}</p>
+      <h1>I'm {name}.</h1>
+      <h3 className="tagline">{tagline}</h3>
     </StyledHero>
   );
 };

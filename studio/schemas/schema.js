@@ -6,6 +6,7 @@ import schemaTypes from "all:part:@sanity/base/schema-type";
 import project from "./project";
 import tool from "./tool";
 import profile from "./profile";
+import category from "./category";
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -18,5 +19,6 @@ export default createSchema({
         project,
         tool,
         profile,
+        category,
     ]),
 });

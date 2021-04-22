@@ -2,9 +2,10 @@ import React from "react";
 import { useStaticQuery, graphql } from "gatsby";
 import SingleProject from "./SingleProject";
 import styled from "styled-components";
+import { ms } from "../styles/global.css";
 
 const StyledContainer = styled.section`
-  padding: 10rem 10%;
+  padding: 10rem 5%;
   h2 {
     text-align: center;
     font-size: 3rem;
@@ -18,15 +19,11 @@ const StyledContainer = styled.section`
       margin: 2rem auto;
     }
   }
-  .gatsby-image-wrapper {
-    height: 200px;
-  }
 `;
 const StyledProjectsGrid = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
   gap: 2rem;
-  /* grid-auto-rows: 200px; */
 `;
 
 const ProjectsGrid = () => {
@@ -48,6 +45,10 @@ const ProjectsGrid = () => {
             }
           }
           description
+          category {
+            category
+            id
+          }
           tools {
             tool
             id
@@ -59,7 +60,7 @@ const ProjectsGrid = () => {
   const projects = data.projects.nodes;
   return (
     <StyledContainer>
-      <h2>Projects</h2>
+      <h2>My Work</h2>
       <StyledProjectsGrid>
         {projects.map(project => {
           return <SingleProject project={project} />;

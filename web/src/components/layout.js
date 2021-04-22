@@ -9,10 +9,6 @@ import React from "react";
 import PropTypes from "prop-types";
 import { useStaticQuery, graphql } from "gatsby";
 import styled from "styled-components";
-import "fontsource-lora/400.css";
-import "fontsource-lato/300.css";
-import "fontsource-lato/400.css";
-import "fontsource-lato/900.css";
 
 import Header from "./Header";
 // import "../styles/global.css";

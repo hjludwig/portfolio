@@ -6,6 +6,7 @@
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
     "@fontsource/crimson-text": "^4.2.2",
+    "@fontsource/source-sans-pro": "^4.2.2",
     "fontsource-lato": "^3.0.9",
     "fontsource-lora": "^3.0.5",
     "gatsby": "^2.26.1",

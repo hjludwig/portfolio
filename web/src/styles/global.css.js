@@ -1,10 +1,13 @@
 import { createGlobalStyle } from "styled-components";
+
+import "@fontsource/crimson-text";
 import "@fontsource/crimson-text/600.css";
-import "@fontsource/crimson-text/600-italic.css";
+import "@fontsource/source-sans-pro";
+import "@fontsource/source-sans-pro/200.css";
 
 // 1. Base size and ratio
 const base = 1.125; //= 18px
-const ratio = 1.5; // Perfect Fifth
+const ratio = 1.333; // Perfect Fifth
 
 // 2. The formula for modular scale is (ratio^value)*base so we need a power function
 const pow = (number, exponent) => {
@@ -18,7 +21,7 @@ const pow = (number, exponent) => {
 };
 
 // 3. Let's make it simpler to use by combining everything under one roof
-const ms = (value, msRatio = ratio, msBase = base) => {
+export const ms = (value, msRatio = ratio, msBase = base) => {
   const size = pow(msRatio, value) * msBase;
   return `${size}em`;
 };
@@ -31,6 +34,7 @@ export const Global = createGlobalStyle`
         /* font-size: 10px; */
     }
     :root {
+        --blue: #076381;
         --blue-500: #042c43;
         --blue-400: #1d4156;
         --blue-300: #365669;
@@ -43,9 +47,10 @@ export const Global = createGlobalStyle`
         --light-grey: #cccccc;
     }
     body {
-        font-family: "Lato", sans-serif;
+        font-family: "Source Sans Pro", sans-serif;
         font-size: ${ms(0)};
         line-height: 1.5;
+        color: var(--dark-grey)
     }
     p {
       margin-bottom: 1em;
@@ -56,19 +61,20 @@ export const Global = createGlobalStyle`
       margin-top: 4rem;
       margin-bottom: 1rem;
       font-weight: 600;
-      letter-spacing: -0.05em;
+      letter-spacing: -0.025em;
+      color: var(--blue)
     }
     h1 {
       font-size: ${ms(4)};
     }
     h2 {
-        font-size: ${ms(3)};
+      font-size: ${ms(3)};
+      text-transform: uppercase;
     }
     h3 {
       font-size: ${ms(2)}
     }
     h4 {
       font-size: ${ms(1)}
-    }
-    
+    }    
 `;

@@ -10,13 +10,14 @@ const StyledHeader = styled.header`
   height: 10vh;
   align-items: center;
   padding: 0 5%;
-  border-bottom: 1px solid #eee;
 `;
 const Logo = styled.div`
   color: white;
   font-size: 2em;
-  background: var(--blue-500);
+  background: var(--blue);
   padding: 1em;
+  font-family: "Crimson Text", serif;
+  font-weight: 200;
   a {
     text-decoration: none;
     color: white;
