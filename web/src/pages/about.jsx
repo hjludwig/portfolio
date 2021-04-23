@@ -18,7 +18,6 @@ const About = () => {
   const data = useStaticQuery(graphql`
     query {
       profile: sanityProfile {
-        bio
         image {
           asset {
             fluid {

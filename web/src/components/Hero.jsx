@@ -31,7 +31,6 @@ const Hero = () => {
       profile: sanityProfile {
         name
         tagline
-        bio
         image {
           asset {
             fluid {

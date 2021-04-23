@@ -2,41 +2,41 @@ import React from "react";
 import { graphql, useStaticQuery } from "gatsby";
 import Image from "gatsby-image";
 import styled from "styled-components";
-import { fullHeight, sectionPadding } from "../styles/mixins";
+import { fullHeight, overLine, sectionPadding } from "../styles/mixins";
+import { ms } from "../styles/global.css";
+import BlockContent from "@sanity/block-content-to-react";
 
 const StyledBio = styled.section`
   display: grid;
   grid-template-columns: 2fr 1fr;
   column-gap: 10%;
   font-size: 125%;
-  background: var(--light-grey);
   ${sectionPadding}
   ${fullHeight};
-  h2 {
-    grid-column: span 2;
-    text-align: center;
-    font-size: 3rem;
-    color: var(--grey);
-    align-self: end;
-    :after {
-      display: block;
-      content: "";
-      width: 3ch;
-      border-top: 2px solid var(--grey);
-      margin: 2rem auto;
-    }
-  }
-  .bio {
-    max-width: 60ch;
-  }
   align-items: center;
+`;
+const Overline = styled.h2`
+  grid-column: span 2;
+  font-family: "Source Sans Pro";
+  font-size: ${ms(1)};
+  font-weight: 400;
+  color: #ad8785;
+  text-transform: none;
+  align-self: end;
+`;
+const Bio = styled.div`
+  max-width: 75ch;
+  font-weight: 300;
+  h1 {
+    margin-top: 0;
+  }
 `;
 
 const About = () => {
   const data = useStaticQuery(graphql`
     query {
       profile: sanityProfile {
-        bio
+        _rawBio
         image {
           asset {
             fluid(maxWidth: 800) {
@@ -47,11 +47,13 @@ const About = () => {
       }
     }
   `);
-  const { bio, image } = data.profile;
+  const { _rawBio, image } = data.profile;
   return (
     <StyledBio>
-      <h2>About Me</h2>
-      <div class="bio">{bio}</div>
+      <Overline>About Me</Overline>
+      <Bio>
+        <BlockContent blocks={_rawBio} />
+      </Bio>
       <Image fluid={image.asset.fluid} />
     </StyledBio>
   );

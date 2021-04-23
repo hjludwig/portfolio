@@ -9,7 +9,7 @@ const StyledHeader = styled.header`
   justify-content: space-between;
   height: 10vh;
   align-items: center;
-  padding: 0 5%;
+  padding: 0 5% 0 1em;
 `;
 const Logo = styled.div`
   color: white;
