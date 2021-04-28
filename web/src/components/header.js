@@ -24,7 +24,7 @@ const Logo = styled.div`
   }
 `;
 
-const Header = ({ siteTitle }) => (
+const Header = () => (
   <StyledHeader>
     <Logo>
       <Link to="/">JL</Link>

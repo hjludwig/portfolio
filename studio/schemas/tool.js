@@ -4,9 +4,15 @@ export default {
     type: "document",
     fields: [
         {
-            name: "tool",
-            title: "Tool",
+            name: "name",
+            title: "Name",
             type: "string",
+        },
+        {
+            name: "category",
+            title: "Category",
+            type: "reference",
+            to: [{ type: "toolCategory" }],
         },
     ],
 };

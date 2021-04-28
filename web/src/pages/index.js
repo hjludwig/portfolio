@@ -5,6 +5,7 @@ import SEO from "../components/seo";
 import ProjectsGrid from "../components/ProjectsGrid";
 import Hero from "../components/Hero";
 import About from "../components/About";
+import Tools from "../components/Tools";
 
 const IndexPage = () => {
   return (
@@ -13,6 +14,7 @@ const IndexPage = () => {
       <Hero />
       <ProjectsGrid />
       <About />
+      <Tools />
     </Layout>
   );
 };

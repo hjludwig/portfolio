@@ -50,7 +50,7 @@ const ProjectsGrid = () => {
             id
           }
           tools {
-            tool
+            name
             id
           }
         }

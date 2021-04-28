@@ -89,7 +89,7 @@ const SingleProject = ({ project }) => {
       <CardBottom>
         <ul>
           {tools.map(tool => (
-            <li key={tool.id}>{tool.tool}</li>
+            <li key={tool.id}>{tool.name}</li>
           ))}
         </ul>
       </CardBottom>

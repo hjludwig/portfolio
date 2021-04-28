@@ -7,6 +7,7 @@ import project from "./project";
 import tool from "./tool";
 import profile from "./profile";
 import category from "./category";
+import toolCategory from "./toolCategory";
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -20,5 +21,6 @@ export default createSchema({
         tool,
         profile,
         category,
+        toolCategory,
     ]),
 });

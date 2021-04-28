@@ -34,7 +34,7 @@ const Project = ({ data }) => {
           <h3>Tools</h3>
           <ul>
             {tools.map(tool => (
-              <li key={tool.id}>{tool.tool}</li>
+              <li key={tool.id}>{tool.name}</li>
             ))}
           </ul>
           <p>{description}</p>
@@ -69,7 +69,7 @@ export const query = graphql`
       description
       link
       tools {
-        tool
+        name
         id
       }
     }
