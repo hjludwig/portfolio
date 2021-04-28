@@ -3,48 +3,61 @@ import { graphql, Link } from "gatsby";
 import Layout from "../components/layout";
 import Img from "gatsby-image";
 import styled from "styled-components";
+import { overLine, sectionPadding } from "../styles/mixins";
+import { OutlineButton } from "../components/common/Button";
 
 const StyledProject = styled.div`
   display: grid;
-  grid-template-columns: 1fr 2fr;
-  header {
-    grid-column: span 2;
-  }
+  grid-template-columns: 2fr 1fr;
+  padding: 6rem 0 6rem 10vw;
+
   .details {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 0 10%;
     max-width: 80ch;
   }
 `;
 
+const Overline = styled.h4`
+  ${overLine};
+`;
+
 const Project = ({ data }) => {
-  const { name, client, image, tools, description, link } = data.project;
+  console.log(data);
+  const {
+    name,
+    client,
+    image,
+    tools,
+    description,
+    link,
+    category,
+  } = data.project;
   return (
     <Layout>
       <StyledProject>
         <header>
-          <h3>{name}</h3>
-          {!client || client === name ? "" : <h4>{client}</h4>}
-        </header>
-
-        <Img fluid={image.asset.fluid} alt={name} />
-        <div className="details">
+          <h1>{name}</h1>
+          <h2>{category.category}</h2>
           <h3>Tools</h3>
           <ul>
             {tools.map(tool => (
               <li key={tool.id}>{tool.name}</li>
             ))}
           </ul>
-          <p>{description}</p>
           {!link || (
-            <button>
+            <OutlineButton primary>
               <a href={link} target="blank">
-                Visit
+                Visit Project
               </a>
-            </button>
+            </OutlineButton>
           )}
+        </header>
+
+        <div className="details">
+          <Img fluid={image.asset.fluid} alt={name} />
+          <p>{description}</p>
         </div>
       </StyledProject>
     </Layout>
@@ -71,6 +84,9 @@ export const query = graphql`
       tools {
         name
         id
+      }
+      category {
+        category
       }
     }
   }

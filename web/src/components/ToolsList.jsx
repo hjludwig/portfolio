@@ -12,10 +12,13 @@ const List = styled.ul`
 
 const Heading = styled.h2`
   font-family: "Source Sans Pro", sans-serif;
-  color: var(--grey-500);
+  color: var(--grey);
   font-weight: 300;
   font-size: ${ms(0)};
   letter-spacing: 0.025em;
+  border-bottom: 1px solid #efefef;
+  padding-bottom: 1em;
+  margin-bottom: 2em;
 `;
 const ToolsList = ({ tools }) => {
   return (

@@ -10,7 +10,7 @@ import {
   FaReact,
   FaFigma,
 } from "react-icons/fa";
-import { SiGatsby, SiJavascript } from "react-icons/si";
+import { SiGatsby, SiJavascript, SiPhp } from "react-icons/si";
 import styled from "styled-components";
 
 import sanityIconBG from "../images/sanity-icon.png";
@@ -48,6 +48,8 @@ const Icon = ({ name }) => {
     <FaCss3Alt {...iconProps} />
   ) : name === "Javascript" ? (
     <SiJavascript {...iconProps} />
+  ) : name === "PHP" ? (
+    <SiPhp {...iconProps} />
   ) : name === "Gatsby" ? (
     <SiGatsby {...iconProps} />
   ) : name === "Wordpress" ? (

@@ -35,19 +35,11 @@ export const OutlineButton = styled(Button)`
   background: none;
   border: 1px solid;
   color: ${props =>
-    props.primary
-      ? "var(--blue-500)"
-      : props.secondary
-      ? "var(--gold)"
-      : "grey"};
+    props.primary ? "var(--blue)" : props.secondary ? "var(--gold)" : "grey"};
   &:hover,
   &:active {
     background: ${props =>
-      props.primary
-        ? "var(--blue-500)"
-        : props.secondary
-        ? "var(--gold)"
-        : "grey"};
+      props.primary ? "var(--blue)" : props.secondary ? "var(--gold)" : "grey"};
     color: white;
   }
 `;

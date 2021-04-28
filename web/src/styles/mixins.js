@@ -2,7 +2,7 @@ import { css } from "styled-components";
 import { ms } from "./global.css";
 
 export const sectionPadding = () => {
-  return `padding: 6rem 10%;`;
+  return `padding: 6rem 10vw;`;
 };
 
 export const fullHeight = () => {
