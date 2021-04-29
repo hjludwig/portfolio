@@ -6,6 +6,8 @@ import styled from "styled-components";
 import { overLine, sectionPadding } from "../styles/mixins";
 import { OutlineButton } from "../components/common/Button";
 import { ms } from "../styles/global.css";
+import BlockContent from "@sanity/block-content-to-react";
+import ToolIcon from "../components/ToolIcon";
 
 const ProjectStyles = styled.div`
   display: grid;
@@ -73,15 +75,7 @@ const Tool = styled.li`
 
 const Project = ({ data }) => {
   console.log(data);
-  const {
-    name,
-    client,
-    image,
-    tools,
-    description,
-    link,
-    category,
-  } = data.project;
+  const { name, image, tools, _rawDescription, link, category } = data.project;
   return (
     <Layout>
       <ProjectStyles>
@@ -91,10 +85,13 @@ const Project = ({ data }) => {
           <ToolsHeading>Tools</ToolsHeading>
           <ToolsList>
             {tools.map(tool => (
-              <Tool key={tool.id}>{tool.name}</Tool>
+              <Tool key={tool.id}>
+                <ToolIcon name={tool.name} />
+                {tool.name}
+              </Tool>
             ))}
           </ToolsList>
-          {!link || (
+          {link && (
             <OutlineButton primary>
               <a href={link} target="blank">
                 Visit Project
@@ -109,7 +106,7 @@ const Project = ({ data }) => {
           </Image>
           <Description>
             <h2>About</h2>
-            <p>{description}</p>
+            <BlockContent blocks={_rawDescription} />
           </Description>
         </Details>
       </ProjectStyles>
@@ -132,7 +129,7 @@ export const query = graphql`
           }
         }
       }
-      description
+      _rawDescription
       link
       tools {
         name

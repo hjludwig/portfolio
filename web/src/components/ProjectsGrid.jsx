@@ -44,7 +44,6 @@ const ProjectsGrid = () => {
               }
             }
           }
-          description
           category {
             category
             id
