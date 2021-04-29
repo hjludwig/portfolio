@@ -10,6 +10,7 @@ const StyledContainer = styled.section`
     text-align: center;
     font-size: 3rem;
     margin-bottom: 2em;
+    margin-top: 0;
     color: var(--blue-300);
     :after {
       display: block;

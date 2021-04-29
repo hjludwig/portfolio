@@ -13,9 +13,13 @@ const StyledHeader = styled.header`
 `;
 const Logo = styled.div`
   color: white;
-  font-size: 2em;
+  font-size: calc(10vh / 2.5);
   background: var(--blue);
-  padding: 1em;
+  padding: 0 0.75em;
+  height: 10vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   font-family: "Crimson Text", serif;
   font-weight: 200;
   a {
