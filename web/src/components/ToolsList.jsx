@@ -3,8 +3,6 @@ import styled from "styled-components";
 import { ms } from "../styles/global.css";
 import Tool from "./Tool";
 
-const Wrapper = styled.div``;
-
 const List = styled.ul`
   list-style-type: none;
   display: flex;

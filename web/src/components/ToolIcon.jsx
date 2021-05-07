@@ -4,8 +4,6 @@ import sanityIconBG from "../images/sanity-icon.png";
 import {
   FaHtml5,
   FaGlobe,
-  FaCss3,
-  FaJava,
   FaCss3Alt,
   FaWordpress,
   FaAdobe,

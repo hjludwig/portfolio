@@ -1,9 +1,8 @@
 import React from "react";
-import { graphql, Link } from "gatsby";
-import Layout from "../components/layout";
+import { graphql } from "gatsby";
+import Layout from "../components/Layout";
 import Img from "gatsby-image";
 import styled from "styled-components";
-import { overLine, sectionPadding } from "../styles/mixins";
 import { OutlineButton } from "../components/common/Button";
 import { ms } from "../styles/global.css";
 import BlockContent from "@sanity/block-content-to-react";
@@ -32,7 +31,6 @@ const Name = styled.h1`
   }
 `;
 const Category = styled.h2`
-  /* text-transform: none; */
   color: var(--dark-grey);
   font-size: ${ms(0)};
   letter-spacing: 0.025em;
@@ -47,10 +45,8 @@ const Image = styled.div`
 const Description = styled.div`
   max-width: 70ch;
   font-size: ${ms(0)};
-  /* font-weight: 300; */
   color: var(--grey);
   h2 {
-    /* text-transform: none; */
     font-family: "Source Sans Pro", sans-serif;
     color: var(--grey);
     font-weight: 300;

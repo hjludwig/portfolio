@@ -2,7 +2,7 @@ import React from "react";
 import { graphql, useStaticQuery } from "gatsby";
 import Image from "gatsby-image";
 import styled from "styled-components";
-import { fullHeight, overLine, sectionPadding } from "../styles/mixins";
+import { fullHeight, sectionPadding } from "../styles/mixins";
 import { ms } from "../styles/global.css";
 import BlockContent from "@sanity/block-content-to-react";
 

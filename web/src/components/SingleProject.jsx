@@ -2,7 +2,7 @@ import React from "react";
 import Img from "gatsby-image";
 import styled from "styled-components";
 import { Link } from "gatsby";
-import { SolidButton, OutlineButton } from "./common/Button";
+import { SolidButton } from "./common/Button";
 import { ms } from "../styles/global.css";
 import { overLine } from "../styles/mixins";
 
@@ -71,7 +71,7 @@ const CardBottom = styled.div`
 `;
 
 const SingleProject = ({ project }) => {
-  const { name, category, image, description, tools, slug } = project;
+  const { name, category, image, tools, slug } = project;
   return (
     <StyledProject>
       <CardTop>

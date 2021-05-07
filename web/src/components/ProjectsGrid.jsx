@@ -2,7 +2,6 @@ import React from "react";
 import { useStaticQuery, graphql } from "gatsby";
 import SingleProject from "./SingleProject";
 import styled from "styled-components";
-import { ms } from "../styles/global.css";
 
 const StyledContainer = styled.section`
   padding: 10rem 5%;
