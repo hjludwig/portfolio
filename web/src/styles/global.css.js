@@ -78,5 +78,15 @@ export const Global = createGlobalStyle`
     }
     h4 {
       font-size: ${ms(1)}
-    }    
+    }
+    p > a {
+    color: inherit;
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: all 0.25s ease;
+    &:hover {
+      color: var(--blue);
+      border-color: var(--blue);
+    }
+    }   
 `;

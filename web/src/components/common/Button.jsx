@@ -8,12 +8,12 @@ const Button = styled.button`
   letter-spacing: 0.075em;
   font-family: "Source Sans Pro";
   font-size: calc(${ms(0)} / 1.25);
-  /* font-size: ${ms(0)}; */
-  /* font-weight: 200; */
-  /* text-transform: uppercase; */
   a {
     text-decoration: none;
     color: inherit;
+  }
+  &:hover {
+    cursor: pointer;
   }
 `;
 
@@ -21,11 +21,12 @@ export const SolidButton = styled(Button)`
   background: ${props =>
     props.primary ? "var(--blue)" : props.secondary ? "var(--gold)" : "none"};
   color: white;
+  transition: all 0.25s ease;
   &:hover,
   &:active {
     background: ${props =>
       props.primary
-        ? "var(--blue)"
+        ? "var(--light-blue)"
         : props.secondary
         ? "var(--gold-dark)"
         : ""};
@@ -35,6 +36,7 @@ export const SolidButton = styled(Button)`
 export const OutlineButton = styled(Button)`
   background: none;
   border: 1px solid;
+  transition: all 0.25s ease;
   color: ${props =>
     props.primary ? "var(--blue)" : props.secondary ? "var(--gold)" : "grey"};
   &:hover,

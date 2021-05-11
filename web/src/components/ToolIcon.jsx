@@ -10,7 +10,12 @@ import {
   FaReact,
   FaFigma,
 } from "react-icons/fa";
-import { SiGatsby, SiJavascript, SiPhp } from "react-icons/si";
+import {
+  SiGatsby,
+  SiJavascript,
+  SiPhp,
+  SiStyledComponents,
+} from "react-icons/si";
 import styled from "styled-components";
 
 const ToolIcon = ({ name }) => {
@@ -43,6 +48,8 @@ const ToolIcon = ({ name }) => {
     <FaAdobe {...iconProps} />
   ) : name === "Figma" ? (
     <FaFigma {...iconProps} />
+  ) : name === "Styled Components" ? (
+    <SiStyledComponents {...iconProps} />
   ) : name === "Sanity" ? (
     <SanityIcon />
   ) : (
@@ -62,7 +69,7 @@ const SanityIcon = () => {
     position: relative;
     top: -2px;
   `;
-  return <Icon></Icon>;
+  return <Icon title="Sanity.io"></Icon>;
 };
 
 export default ToolIcon;

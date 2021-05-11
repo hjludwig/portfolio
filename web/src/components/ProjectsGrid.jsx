@@ -60,7 +60,7 @@ const ProjectsGrid = () => {
   const projects = data.projects.nodes;
   return (
     <StyledContainer>
-      <h2>My Work</h2>
+      <h2 id="work">My Work</h2>
       <StyledProjectsGrid>
         {projects.map(
           project => project.isFeatured && <SingleProject project={project} />

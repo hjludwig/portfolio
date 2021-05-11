@@ -1,5 +1,5 @@
 import React from "react";
-import { graphql } from "gatsby";
+import { graphql, Link } from "gatsby";
 import Layout from "../components/Layout";
 import Img from "gatsby-image";
 import styled from "styled-components";
@@ -7,11 +7,12 @@ import { OutlineButton } from "../components/common/Button";
 import { ms } from "../styles/global.css";
 import BlockContent from "@sanity/block-content-to-react";
 import ToolIcon from "../components/ToolIcon";
+import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 
 const ProjectStyles = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
-  padding: 6rem 0 6rem 10vw;
+  padding: 6rem 0 12rem 10vw;
 `;
 const Main = styled.div`
   padding-right: 2rem;
@@ -68,6 +69,41 @@ const ToolsList = styled.ul`
 const Tool = styled.li`
   margin-right: 1em;
 `;
+const Navigation = styled.nav`
+  margin: 3em 0 3em -0.5rem;
+  a {
+    color: var(--light-grey);
+    text-decoration: none;
+    transition: color 0.25s ease;
+    &:hover {
+      color: var(--blue);
+      .icon {
+        transform: translateX(0);
+      }
+    }
+  }
+`;
+const Divider = styled.span`
+  color: var(--light-grey);
+  margin: 0 0.5em;
+`;
+const Icon = styled.span`
+  /* margin-left: 0.5em; */
+  overflow: hidden;
+  display: inline-block;
+  .icon {
+    transition: transform 0.25s ease;
+    vertical-align: bottom;
+  }
+  .icon-right {
+    /* margin-left: 0.25rem; */
+    transform: translateX(-150%);
+  }
+  .icon-left {
+    margin-right: 0.25rem;
+    transform: translateX(150%);
+  }
+`;
 
 const Project = ({ data }) => {
   console.log(data);
@@ -105,6 +141,21 @@ const Project = ({ data }) => {
             <BlockContent blocks={_rawDescription} />
           </Description>
         </Details>
+        <Navigation>
+          <Link to="/#work">
+            <Icon>
+              <FaArrowLeft size={"0.5em"} className={"icon icon-left"} />
+            </Icon>
+            Back home
+          </Link>
+          {/* <Divider>|</Divider>
+          <Link to="/all-projects">
+            All projects{" "}
+            <Icon>
+              <FaArrowRight size={"0.5em"} className={"icon icon-right"} />
+            </Icon>
+          </Link> */}
+        </Navigation>
       </ProjectStyles>
     </Layout>
   );
