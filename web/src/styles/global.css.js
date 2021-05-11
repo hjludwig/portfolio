@@ -34,6 +34,7 @@ export const Global = createGlobalStyle`
         /* font-size: 10px; */
     }
     :root {
+        --light-blue: #6cabbf;
         --blue: #076381;
         --blue-500: #042c43;
         --blue-400: #1d4156;

@@ -7,9 +7,10 @@ const Button = styled.button`
   border: none;
   letter-spacing: 0.075em;
   font-family: "Source Sans Pro";
-  font-size: calc(${ms(0)} / 1.45);
-  font-weight: 200;
-  text-transform: uppercase;
+  font-size: calc(${ms(0)} / 1.25);
+  /* font-size: ${ms(0)}; */
+  /* font-weight: 200; */
+  /* text-transform: uppercase; */
   a {
     text-decoration: none;
     color: inherit;

@@ -2,7 +2,6 @@ import React from "react";
 import Img from "gatsby-image";
 import styled from "styled-components";
 import { Link } from "gatsby";
-import { OutlineButton, SolidButton } from "./common/Button";
 import { ms } from "../styles/global.css";
 import { overLine } from "../styles/mixins";
 import { FaArrowRight } from "react-icons/fa";
@@ -11,8 +10,9 @@ const StyledProject = styled.div`
   padding-bottom: 0.5rem;
   box-shadow: #ccc 0 0 5px 0;
   position: relative;
+  transition: box-shadow 0.25s ease;
   &:hover {
-    box-shadow: #ccc 0 0 10px 0;
+    box-shadow: #ccc 0 0 15px 0;
   }
   ul {
     list-style-type: none;
