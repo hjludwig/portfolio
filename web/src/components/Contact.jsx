@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { sectionPadding } from "../styles/mixins";
 import { ms } from "../styles/global.css";
 import { SolidButton } from "./common/Button";
+import Socials from "./Socials";
 
 const Heading = styled.h2`
   /* text-transform: uppercase; */
@@ -15,10 +16,12 @@ const Wrapper = styled.div`
   align-items: center;
   justify-content: center;
   background: #efefef;
+  > * {
+    width: 100%;
+    max-width: 960px;
+  }
 `;
 const Form = styled.form`
-  width: 100%;
-  max-width: 960px;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 1em;
@@ -83,6 +86,7 @@ const Contact = () => {
           Send Message
         </SolidButton>
       </Form>
+      <Socials />
     </Wrapper>
   );
 };
