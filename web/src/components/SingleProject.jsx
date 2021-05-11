@@ -2,15 +2,18 @@ import React from "react";
 import Img from "gatsby-image";
 import styled from "styled-components";
 import { Link } from "gatsby";
-import { SolidButton } from "./common/Button";
+import { OutlineButton, SolidButton } from "./common/Button";
 import { ms } from "../styles/global.css";
 import { overLine } from "../styles/mixins";
+import { FaArrowRight } from "react-icons/fa";
 
 const StyledProject = styled.div`
   padding-bottom: 0.5rem;
   box-shadow: #ccc 0 0 5px 0;
   position: relative;
-
+  &:hover {
+    box-shadow: #ccc 0 0 10px 0;
+  }
   ul {
     list-style-type: none;
   }
@@ -28,71 +31,84 @@ const StyledProject = styled.div`
 const ProjectImage = styled.div`
   z-index: -1;
   .gatsby-image-wrapper {
-    height: ${ms(10)};
+    height: ${ms(9)};
   }
 `;
 const Overline = styled.h4`
   ${overLine}
-  color: white;
-  margin-top: 0;
+  /* color: white; */
+  color: var(--brown);
+  margin-top: 1em;
+  margin-bottom: 0;
 `;
 const Text = styled.div`
   align-self: end;
   padding: 1em;
 `;
 const ProjectName = styled.h3`
-  color: white;
-  /* font-weight: 400; */
+  /* color: white; */
+  color: var(--grey);
   margin-top: 0;
   font-size: ${ms(2)};
   &:after {
     content: "";
     display: block;
     width: 2em;
-    border: 1px solid white;
+    border: 1px solid var(--light-grey);
     margin-top: 0.5em;
-    margin-bottom: 1em;
+    /* margin-bottom: 1em; */
+  }
+  &:hover {
+    a {
+      color: var(--blue);
+      transition: color 0.25s ease;
+    }
+    .icon {
+      transform: translateX(0);
+    }
+  }
+  a {
+    text-decoration: none;
+    color: var(--grey);
   }
 `;
-const CardTop = styled.div`
-  display: grid;
-  background: linear-gradient(
-    0deg,
-    rgba(0, 0, 0, 0.4) 0%,
-    rgba(0, 0, 0, 0.2) 100%
-  );
-  grid-template-areas: "stack";
-  > * {
-    grid-area: stack;
+
+const Icon = styled.span`
+  /* margin-left: 0.5em; */
+  overflow: hidden;
+  display: inline-block;
+  .icon {
+    transform: translateX(-100%);
+    transition: transform 0.25s ease;
+    vertical-align: bottom;
+    color: var(--light-grey);
   }
-`;
-const CardBottom = styled.div`
-  margin: 1em;
 `;
 
 const SingleProject = ({ project }) => {
   const { name, category, image, tools, slug } = project;
   return (
     <StyledProject>
-      <CardTop>
-        <Text>
-          {category && <Overline>{category.category}</Overline>}
-          <ProjectName>{name}</ProjectName>
-          <SolidButton primary>
-            <Link to={slug.current}>View Project</Link>
-          </SolidButton>
-        </Text>
-        <ProjectImage>
-          <Img fluid={image.asset.fluid} alt={name} />
-        </ProjectImage>
-      </CardTop>
-      <CardBottom>
+      <ProjectImage>
+        <Img fluid={image.asset.fluid} alt={name} />
+      </ProjectImage>
+      <Text>
+        {category && <Overline>{category.category}</Overline>}
+
+        <ProjectName>
+          <Link to={slug.current} title="View Project">
+            {name}{" "}
+            <Icon>
+              <FaArrowRight size={"0.5em"} className={"icon"} />
+            </Icon>
+          </Link>
+        </ProjectName>
         <ul>
           {tools.map(tool => (
             <li key={tool.id}>{tool.name}</li>
           ))}
         </ul>
-      </CardBottom>
+      </Text>
     </StyledProject>
   );
 };

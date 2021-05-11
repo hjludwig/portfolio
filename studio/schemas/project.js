@@ -24,6 +24,12 @@ export default {
             to: [{ type: "category" }],
         },
         {
+            name: "isFeatured",
+            title: "Featured",
+            description: "Feature this project on the front page?",
+            type: "boolean",
+        },
+        {
             name: "client",
             title: "Client",
             type: "string",
@@ -60,4 +66,8 @@ export default {
             ],
         },
     ],
+
+    initialValue: {
+        isFeatured: false,
+    },
 };

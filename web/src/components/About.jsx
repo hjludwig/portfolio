@@ -20,7 +20,7 @@ const Overline = styled.h2`
   font-family: "Source Sans Pro";
   font-size: ${ms(1)};
   font-weight: 400;
-  color: #ad8785;
+  color: var(--brown);
   text-transform: none;
   align-self: end;
 `;

@@ -2,6 +2,8 @@ import React from "react";
 import { useStaticQuery, graphql } from "gatsby";
 import SingleProject from "./SingleProject";
 import styled from "styled-components";
+import { ms } from "../styles/global.css";
+import { overLine } from "../styles/mixins";
 
 const StyledContainer = styled.section`
   padding: 10rem 5%;
@@ -39,11 +41,12 @@ const ProjectsGrid = () => {
           client
           image {
             asset {
-              fluid(maxWidth: 500) {
+              fluid(maxWidth: 900) {
                 ...GatsbySanityImageFluid
               }
             }
           }
+          isFeatured
           category {
             category
             id
@@ -61,9 +64,9 @@ const ProjectsGrid = () => {
     <StyledContainer>
       <h2>My Work</h2>
       <StyledProjectsGrid>
-        {projects.map(project => {
-          return <SingleProject project={project} />;
-        })}
+        {projects.map(
+          project => project.isFeatured && <SingleProject project={project} />
+        )}
       </StyledProjectsGrid>
     </StyledContainer>
   );

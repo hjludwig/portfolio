@@ -45,6 +45,7 @@ export const Global = createGlobalStyle`
         --dark-grey: #333333;
         --grey: #696969;
         --light-grey: #cccccc;
+        --brown: #ad8785;
     }
     body {
         font-family: "Source Sans Pro", sans-serif;
