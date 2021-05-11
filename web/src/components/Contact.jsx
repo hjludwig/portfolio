@@ -57,6 +57,16 @@ const Message = styled.label`
   grid-column: 1/-1;
   margin-bottom: 1em;
 `;
+const Heading2 = styled.h3`
+  font-family: "Source Sans Pro", sans-serif;
+  font-weight: 300;
+  grid-column: 1 /-1;
+  font-size: ${ms(2)};
+  color: var(--grey);
+  border-top: 1px solid var(--light-grey);
+  padding-top: 2em;
+  margin-bottom: 1em;
+`;
 
 const Contact = () => {
   return (
@@ -86,6 +96,8 @@ const Contact = () => {
           Send Message
         </SolidButton>
       </Form>
+      <Heading2>Connect</Heading2>
+
       <Socials />
     </Wrapper>
   );

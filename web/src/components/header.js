@@ -3,13 +3,14 @@ import PropTypes from "prop-types";
 import React from "react";
 import Navigation from "./Navigation";
 import styled from "styled-components";
+import Socials from "./Socials";
 
 const StyledHeader = styled.header`
   display: flex;
   justify-content: space-between;
   height: 10vh;
   align-items: center;
-  padding: 0 5% 0 1em;
+  padding: 0 1em;
 `;
 const Logo = styled.div`
   color: white;
@@ -33,8 +34,7 @@ const Header = () => (
     <Logo>
       <Link to="/">JL</Link>
     </Logo>
-
-    <Navigation />
+    <Socials />
   </StyledHeader>
 );
 

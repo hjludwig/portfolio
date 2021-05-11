@@ -3,17 +3,6 @@ import { FaGithub, FaLinkedin } from "react-icons/fa";
 import styled from "styled-components";
 import { ms } from "../styles/global.css";
 
-const Heading = styled.h3`
-  font-family: "Source Sans Pro", sans-serif;
-  font-weight: 300;
-  grid-column: 1 /-1;
-  font-size: ${ms(2)};
-  color: var(--grey);
-  border-top: 1px solid var(--light-grey);
-  padding-top: 2em;
-  margin-bottom: 1em;
-`;
-
 const List = styled.ul`
   list-style-type: none;
   display: flex;
@@ -30,7 +19,6 @@ const SocialLink = styled.a`
 const Socials = () => {
   return (
     <div>
-      <Heading>Connect</Heading>
       <List>
         <li>
           <SocialLink

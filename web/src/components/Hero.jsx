@@ -14,18 +14,39 @@ const StyledHero = styled.section`
   padding: 0 10%;
   text-align: center;
   line-height: 1;
+  z-index: -1;
   > * {
     letter-spacing: -0.04em;
   }
-  h1 {
-    font-size: ${ms(6)};
-    margin-bottom: 0;
+`;
+const Intro = styled.h1`
+  font-size: ${ms(3)};
+  @media screen and (min-width: 600px) {
+    font-size: ${ms(4)};
   }
-  .tagline {
+  @media screen and (min-width: 1000px) {
     font-size: ${ms(5)};
-    color: var(--dark-grey);
-    margin-top: 0;
   }
+  @media screen and (min-width: 1200px) {
+    font-size: ${ms(6)};
+  }
+
+  margin-bottom: 0;
+`;
+const Tagline = styled.h3`
+  font-size: ${ms(2)};
+  @media screen and (min-width: 600px) {
+    font-size: ${ms(3)};
+  }
+  @media screen and (min-width: 1000px) {
+    font-size: ${ms(4)};
+  }
+  @media screen and (min-width: 1200px) {
+    font-size: ${ms(5)};
+  }
+
+  color: var(--dark-grey);
+  margin-top: 0;
 `;
 const pulseAnimation = keyframes`
   0% {transform: scale(1);}
@@ -60,8 +81,8 @@ const Hero = () => {
   const { name, tagline } = data.profile;
   return (
     <StyledHero>
-      <h1>I'm {name}.</h1>
-      <h3 className="tagline">{tagline}</h3>
+      <Intro>I'm {name}.</Intro>
+      <Tagline>{tagline}</Tagline>
       <Arrow>
         <BiChevronDown size="4em" />
       </Arrow>

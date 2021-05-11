@@ -4,7 +4,7 @@ import SingleProject from "./SingleProject";
 import styled from "styled-components";
 
 const StyledContainer = styled.section`
-  padding: 10rem 5%;
+  padding: 5rem 2rem;
   h2 {
     text-align: center;
     font-size: 3rem;
@@ -22,8 +22,14 @@ const StyledContainer = styled.section`
 `;
 const StyledProjectsGrid = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-  gap: 2rem;
+  /* grid-template-columns: repeat(2, 1fr); */
+  @media screen and (min-width: 760px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @media screen and (min-width: 1470px) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  gap: 1rem;
 `;
 
 const ProjectsGrid = () => {
@@ -59,8 +65,8 @@ const ProjectsGrid = () => {
   `);
   const projects = data.projects.nodes;
   return (
-    <StyledContainer>
-      <h2 id="work">My Work</h2>
+    <StyledContainer id="work">
+      <h2>My Work</h2>
       <StyledProjectsGrid>
         {projects.map(
           project => project.isFeatured && <SingleProject project={project} />

@@ -84,9 +84,18 @@ export const Global = createGlobalStyle`
     text-decoration: none;
     border-bottom: 1px solid transparent;
     transition: all 0.25s ease;
-    &:hover {
-      color: var(--blue);
-      border-color: var(--blue);
+      &:hover {
+        color: var(--blue);
+        border-color: var(--blue);
+      }
     }
-    }   
+    html {
+    scroll-behavior: smooth;
+    }
+    :target:before {
+        content: "";
+        display: block;
+        height: 100px;
+        margin: -100px 0 0;
+    }
 `;
