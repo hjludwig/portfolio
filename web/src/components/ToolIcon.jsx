@@ -24,11 +24,12 @@ const ToolIcon = ({ name }) => {
     color: "#076381",
     style: {
       verticalAlign: "middle",
-      marginRight: "0.5em",
+
       position: "relative",
       top: "-2px",
     },
     size: "2em",
+    className: "tool-icon",
   };
   return name === "HTML5" ? (
     <FaHtml5 {...iconProps} />
@@ -51,25 +52,27 @@ const ToolIcon = ({ name }) => {
   ) : name === "Styled Components" ? (
     <SiStyledComponents {...iconProps} />
   ) : name === "Sanity" ? (
-    <SanityIcon />
+    <SanityIcon {...iconProps} />
   ) : (
     <FaGlobe {...iconProps} />
   );
 };
 
-const SanityIcon = () => {
+const SanityIcon = ({ className }) => {
   const Icon = styled.span`
     background-image: url(${sanityIconBG});
-    background-size: cover;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
     display: inline-block;
     width: 2em;
     height: 2em;
     vertical-align: middle;
-    margin-right: 0.25em;
+    /* margin-right: 0.25em; */
     position: relative;
     top: -2px;
   `;
-  return <Icon title="Sanity.io"></Icon>;
+  return <Icon title="Sanity.io" className={className}></Icon>;
 };
 
 export default ToolIcon;

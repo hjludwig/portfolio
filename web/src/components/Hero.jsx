@@ -81,7 +81,7 @@ const Hero = () => {
   const { name, tagline } = data.profile;
   return (
     <StyledHero>
-      <Intro>I'm {name}.</Intro>
+      <Intro>I’m {name}.</Intro>
       <Tagline>{tagline}</Tagline>
       <Arrow>
         <BiChevronDown size="4em" />

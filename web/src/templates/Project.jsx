@@ -10,11 +10,18 @@ import ToolIcon from "../components/ToolIcon";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 
 const ProjectStyles = styled.div`
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  padding: 6rem 0 12rem 10vw;
+  @media screen and (min-width: 960px) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  padding: 6rem 0 12rem 5vw;
+  @media screen and (min-width: 1225px) {
+    padding-left: 10vw;
+  }
 `;
 const Main = styled.div`
+  display: flex;
+  flex-direction: column;
   padding-right: 2rem;
 `;
 const Details = styled.div`
@@ -22,7 +29,17 @@ const Details = styled.div`
   flex-direction: column;
 `;
 const Name = styled.h1`
-  font-size: ${ms(6)};
+  font-size: ${ms(3)};
+  margin-top: 0;
+  @media screen and (min-width: 760px) {
+    font-size: ${ms(5)};
+  }
+  @media screen and (min-width: 960px) {
+    margin-top: 4rem;
+  }
+  @media screen and (min-width: 1225px) {
+    font-size: ${ms(6)};
+  }
   &:after {
     content: "";
     display: block;
@@ -35,6 +52,10 @@ const Category = styled.h2`
   color: var(--dark-grey);
   font-size: ${ms(0)};
   letter-spacing: 0.025em;
+  order: -1;
+  @media screen and (min-width: 960px) {
+    order: 0;
+  }
   margin-top: 2em;
 `;
 
@@ -45,6 +66,7 @@ const Image = styled.div`
 `;
 const Description = styled.div`
   max-width: 70ch;
+  padding-right: 2em;
   font-size: ${ms(0)};
   color: var(--grey);
   h2 {
@@ -55,19 +77,37 @@ const Description = styled.div`
     letter-spacing: 0.025em;
   }
 `;
+
 const ToolsHeading = styled.h3`
   font-family: "Source Sans Pro", sans-serif;
   color: var(--dark-grey);
   font-weight: 300;
-  margin-top: 6em;
+  margin-top: 0;
+  font-size: ${ms(1)};
+  display: none;
+  @media screen and (min-width: 960px) {
+    display: block;
+    font-size: ${ms(2)};
+    margin-top: 6em;
+  }
 `;
 const ToolsList = styled.ul`
   list-style-type: none;
-  display: flex;
+  margin-top: 1em;
+  /* display: flex; */
   margin-bottom: 4em;
 `;
 const Tool = styled.li`
   margin-right: 1em;
+  display: inline-block;
+  margin-bottom: 1em;
+  .tool-icon {
+    height: 1.25em;
+    @media screen and (min-width: 760px) {
+      height: 2em;
+      margin-right: 0.5em;
+    }
+  }
 `;
 const Navigation = styled.nav`
   margin: 3em 0 3em -0.5rem;

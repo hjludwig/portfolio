@@ -8,13 +8,28 @@ const StyledFooter = styled.footer`
   padding: 2rem 5% 2em 1em;
   color: var(--grey);
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  flex-direction: column;
+  gap: 1em;
+  @media screen and (min-width: 1100px) {
+    /* display: flex; */
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
   border-top: 1px solid var(--light-grey);
   .icon {
     color: var(--light-grey);
     margin-left: 0.5em;
     vertical-align: middle;
+  }
+`;
+const Copyright = styled.small`
+  border-top: 1px solid;
+  padding-top: 1em;
+  color: var(--light-grey);
+  @media screen and (min-width: 1100px) {
+    border-top: none;
+    padding-top: 0;
   }
 `;
 const Logo = styled.span`
@@ -51,10 +66,10 @@ const Footer = () => {
           <FaWrench className="icon" />
         </p>
       </Tools>
-      <small>
+      <Copyright>
         Copyright © {new Date().getFullYear()}, Jeremy Ludwig. All rights
         reserved and all that.
-      </small>
+      </Copyright>
     </StyledFooter>
   );
 };

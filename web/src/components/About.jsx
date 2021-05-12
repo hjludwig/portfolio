@@ -7,18 +7,23 @@ import { ms } from "../styles/global.css";
 import BlockContent from "@sanity/block-content-to-react";
 
 const StyledBio = styled.section`
-  display: grid;
-  grid-template-columns: 2fr 1fr;
-  column-gap: 10%;
+  @media screen and (min-width: 1020px) {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    column-gap: 10%;
+  }
   font-size: 125%;
   ${sectionPadding}
-  ${fullHeight};
+  min-height: 90vh;
   align-items: center;
 `;
 const Overline = styled.h2`
   grid-column: span 2;
   font-family: "Source Sans Pro";
-  font-size: ${ms(1)};
+  font-size: ${ms(0)};
+  @media screen and (min-width: 600px) {
+    font-size: ${ms(1)};
+  }
   font-weight: 400;
   color: var(--brown);
   text-transform: none;
@@ -28,6 +33,10 @@ const Bio = styled.div`
   max-width: 75ch;
   font-weight: 300;
   h1 {
+    font-size: ${ms(2)};
+    @media screen and (min-width: 600px) {
+      font-size: ${ms(4)};
+    }
     margin-top: 0;
   }
 `;
