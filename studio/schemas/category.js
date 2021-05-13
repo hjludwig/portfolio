@@ -1,6 +1,6 @@
 export default {
     name: "category",
-    title: "Categories",
+    title: "Project Categories",
     type: "document",
     fields: [
         {
