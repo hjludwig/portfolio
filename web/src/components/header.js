@@ -10,7 +10,7 @@ const StyledHeader = styled.header`
   justify-content: space-between;
   height: 10vh;
   align-items: center;
-  padding: 0 1em;
+  padding-left: 1em;
 `;
 const Logo = styled.div`
   color: white;

@@ -7,9 +7,11 @@ import ToolsList from "./ToolsList";
 
 const ToolsSection = styled.div`
   ${sectionPadding}
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-  column-gap: 3em;
+  @media screen and (min-width: 500px) {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    column-gap: 3em;
+  }
 `;
 const Heading = styled.h1`
   font-family: "Source Sans Pro", sans-serif;

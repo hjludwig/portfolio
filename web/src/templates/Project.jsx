@@ -7,7 +7,7 @@ import { OutlineButton } from "../components/common/Button";
 import { ms } from "../styles/global.css";
 import BlockContent from "@sanity/block-content-to-react";
 import ToolIcon from "../components/ToolIcon";
-import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
+import { FaArrowLeft, FaArrowRight, FaGithub } from "react-icons/fa";
 
 const ProjectStyles = styled.div`
   @media screen and (min-width: 960px) {
@@ -23,6 +23,14 @@ const Main = styled.div`
   display: flex;
   flex-direction: column;
   padding-right: 2rem;
+  margin-bottom: 2em;
+  button {
+    align-self: flex-start;
+  }
+  .git-icon {
+    margin: -5px 0.5em 0 -0.5em;
+    vertical-align: middle;
+  }
 `;
 const Details = styled.div`
   display: flex;
@@ -94,8 +102,10 @@ const ToolsHeading = styled.h3`
 const ToolsList = styled.ul`
   list-style-type: none;
   margin-top: 1em;
-  /* display: flex; */
-  margin-bottom: 4em;
+  margin-bottom: 2em;
+  @media screen and (min-width: 960px) {
+    margin-bottom: 4em;
+  }
 `;
 const Tool = styled.li`
   margin-right: 1em;
@@ -108,6 +118,10 @@ const Tool = styled.li`
       margin-right: 0.5em;
     }
   }
+`;
+const Buttons = styled.div`
+  display: flex;
+  gap: 1em;
 `;
 const Navigation = styled.nav`
   margin: 3em 0 3em -0.5rem;
@@ -146,8 +160,15 @@ const Icon = styled.span`
 `;
 
 const Project = ({ data }) => {
-  console.log(data);
-  const { name, image, tools, _rawDescription, link, category } = data.project;
+  const {
+    name,
+    image,
+    tools,
+    _rawDescription,
+    link,
+    category,
+    github,
+  } = data.project;
   return (
     <Layout>
       <ProjectStyles>
@@ -163,13 +184,23 @@ const Project = ({ data }) => {
               </Tool>
             ))}
           </ToolsList>
-          {link && (
-            <OutlineButton primary>
-              <a href={link} target="blank">
-                Visit Project
-              </a>
-            </OutlineButton>
-          )}
+          <Buttons>
+            {link && (
+              <OutlineButton primary>
+                <a href={link} target="blank">
+                  Visit Project
+                </a>
+              </OutlineButton>
+            )}
+            {github && (
+              <OutlineButton>
+                <a href={github} target="_blank" rel="noopener noreferrer">
+                  <FaGithub className={"git-icon"} size={"1.5em"} />
+                  Code
+                </a>
+              </OutlineButton>
+            )}
+          </Buttons>
         </Main>
 
         <Details>
@@ -186,7 +217,7 @@ const Project = ({ data }) => {
             <Icon>
               <FaArrowLeft size={"0.5em"} className={"icon icon-left"} />
             </Icon>
-            Back home
+            Back to Projects
           </Link>
           {/* <Divider>|</Divider>
           <Link to="/all-projects">
@@ -218,6 +249,7 @@ export const query = graphql`
       }
       _rawDescription
       link
+      github
       tools {
         name
         id

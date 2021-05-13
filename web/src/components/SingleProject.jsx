@@ -39,7 +39,7 @@ const Overline = styled.h4`
   /* color: white; */
   color: var(--brown);
   margin-top: 1em;
-  margin-bottom: 0;
+  margin-bottom: 0.5em;
 `;
 const Text = styled.div`
   align-self: end;
@@ -50,6 +50,7 @@ const ProjectName = styled.h3`
   color: var(--grey);
   margin-top: 0;
   font-size: ${ms(2)};
+  line-height: 0.75;
   &:after {
     content: "";
     display: block;

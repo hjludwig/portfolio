@@ -5,7 +5,11 @@ import Tool from "./Tool";
 
 const List = styled.ul`
   list-style-type: none;
-  display: flex;
+  li {
+    display: inline-block;
+    margin-bottom: 1em;
+  }
+  /* display: flex; */
 `;
 
 const Heading = styled.h2`
@@ -16,7 +20,7 @@ const Heading = styled.h2`
   letter-spacing: 0.025em;
   border-bottom: 1px solid #efefef;
   padding-bottom: 1em;
-  margin-bottom: 2em;
+  margin-bottom: 1em;
 `;
 const ToolsList = ({ tools }) => {
   return (

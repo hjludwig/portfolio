@@ -22,9 +22,11 @@ const Wrapper = styled.div`
   }
 `;
 const Form = styled.form`
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1em;
+  @media screen and (min-width: 600px) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1em;
+  }
   input,
   textarea {
     /* display: block; */
@@ -45,14 +47,17 @@ const Form = styled.form`
 `;
 
 const Name = styled.label`
+  width: 100%;
   display: inline-block;
   margin-bottom: 1em;
 `;
 const Email = styled.label`
+  width: 100%;
   display: inline-block;
   margin-bottom: 1em;
 `;
 const Message = styled.label`
+  display: inline-block;
   width: 100%;
   grid-column: 1/-1;
   margin-bottom: 1em;

@@ -67,10 +67,16 @@ export const Global = createGlobalStyle`
       color: var(--blue)
     }
     h1 {
-      font-size: ${ms(4)};
+      font-size: ${ms(3)};
+      @media screen and (min-width: 500px) {
+        font-size: ${ms(4)};
+      }
     }
     h2 {
-      font-size: ${ms(3)};
+      font-size: ${ms(2)};
+      @media screen and (min-width: 500px) {
+        font-size: ${ms(3)};
+      }
       text-transform: uppercase;
     }
     h3 {

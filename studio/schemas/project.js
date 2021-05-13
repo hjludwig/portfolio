@@ -41,6 +41,12 @@ export default {
             description: "Enter a link to the external website",
         },
         {
+            name: "github",
+            title: "Github Repo",
+            type: "url",
+            description: "Enter a link to the Github repository",
+        },
+        {
             name: "image",
             title: "Image",
             type: "image",

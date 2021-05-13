@@ -1,9 +1,12 @@
 import { css } from "styled-components";
 import { ms } from "./global.css";
 
-export const sectionPadding = () => {
-  return `padding: 6rem 10vw;`;
-};
+export const sectionPadding = css`
+  padding: 2rem 5vw;
+  @media screen and (min-width: 600px) {
+    padding: 6rem 10vw;
+  }
+`;
 
 export const fullHeight = () => {
   return `height: 90vh`;

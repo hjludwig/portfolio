@@ -2,7 +2,8 @@ import styled from "styled-components";
 import { ms } from "../../styles/global.css";
 
 const Button = styled.button`
-  padding: 0.75em 1.5em;
+  padding: 0.5em 1.5em;
+  line-height: 2em;
   border-radius: 10em;
   border: none;
   letter-spacing: 0.075em;

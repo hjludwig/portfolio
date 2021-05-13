@@ -27,14 +27,19 @@ const Copyright = styled.small`
   border-top: 1px solid;
   padding-top: 1em;
   color: var(--light-grey);
+  text-align: center;
+  @media screen and (min-width: 500px) {
+    text-align: left;
+  }
   @media screen and (min-width: 1100px) {
     border-top: none;
     padding-top: 0;
   }
 `;
 const Logo = styled.span`
-  display: inline-block;
+  display: block;
   padding: 0.5em 0.75em;
+  margin-bottom: 1em;
   font-family: "Crimson", serif;
   background: var(--light-grey);
   border: 2px solid;
@@ -42,10 +47,20 @@ const Logo = styled.span`
   color: white;
   color: var(--light-grey);
   font-size: ${ms(1)};
-  margin-right: 1rem;
+  @media screen and (min-width: 500px) {
+    display: inline-block;
+    margin-right: 1rem;
+    margin-bottom: 0;
+  }
 `;
 const Tools = styled.div`
   display: flex;
+  flex-direction: column;
+  text-align: center;
+  @media screen and (min-width: 500px) {
+    flex-direction: row;
+    text-align: left;
+  }
   align-items: center;
   p {
     margin-bottom: 0;

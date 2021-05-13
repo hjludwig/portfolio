@@ -4,10 +4,9 @@ import SingleProject from "./SingleProject";
 import styled from "styled-components";
 
 const StyledContainer = styled.section`
-  padding: 5rem 2rem;
+  padding: 5rem 5vw;
   h2 {
     text-align: center;
-    font-size: 3rem;
     margin-bottom: 2em;
     margin-top: 0;
     color: var(--blue-300);
