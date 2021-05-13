@@ -10,7 +10,7 @@ const StyledBio = styled.section`
   @media screen and (min-width: 1020px) {
     display: grid;
     grid-template-columns: 2fr 1fr;
-    column-gap: 10%;
+    column-gap: 5%;
   }
   font-size: 125%;
   ${sectionPadding}

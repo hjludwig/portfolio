@@ -8,6 +8,11 @@ import tool from "./tool";
 import profile from "./profile";
 import category from "./category";
 import toolCategory from "./toolCategory";
+import post from "./post";
+import blogCategory from "./blogCategory";
+import mainImage from "./mainImage";
+import excerptPortableText from "./excerptPortableText";
+import bodyPortableText from "./bodyPortableText";
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -22,5 +27,10 @@ export default createSchema({
         profile,
         category,
         toolCategory,
+        post,
+        blogCategory,
+        mainImage,
+        excerptPortableText,
+        bodyPortableText,
     ]),
 });

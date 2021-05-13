@@ -9,7 +9,16 @@
 exports.createPages = async function ({ actions, graphql }) {
   const { data } = await graphql(`
     query {
-      allSanityProject {
+      projects: allSanityProject {
+        edges {
+          node {
+            slug {
+              current
+            }
+          }
+        }
+      }
+      posts: allSanityPost {
         edges {
           node {
             slug {
@@ -20,11 +29,20 @@ exports.createPages = async function ({ actions, graphql }) {
       }
     }
   `);
-  data.allSanityProject.edges.forEach(edge => {
+  data.projects.edges.forEach(edge => {
     const slug = edge.node.slug.current;
     actions.createPage({
       path: slug,
       component: require.resolve(`./src/templates/Project.jsx`),
+      context: { slug: slug },
+    });
+  });
+
+  data.posts.edges.forEach(edge => {
+    const slug = edge.node.slug.current;
+    actions.createPage({
+      path: slug,
+      component: require.resolve(`./src/templates/BlogPost.jsx`),
       context: { slug: slug },
     });
   });
