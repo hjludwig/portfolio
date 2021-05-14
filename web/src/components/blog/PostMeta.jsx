@@ -1,26 +1,43 @@
 import { format } from "date-fns";
 import React from "react";
+import styled from "styled-components";
+import { ms } from "../../styles/global.css";
+
+const Meta = styled.div`
+  font-family: "Crimson Test", serif;
+  text-transform: uppercase;
+  color: var(--light-grey);
+  letter-spacing: 0.025em;
+  font-size: calc(${ms(0)} / 1.45);
+  margin-bottom: 1em;
+`;
+const Category = styled.span`
+  color: var(--grey);
+`;
 
 const PostMeta = ({ categories, publishedAt }) => {
   return (
-    <div>
+    <Meta>
       Published {format(new Date(publishedAt), "MMMM d, yyyy")} in{" "}
       {categories.length === 0 ? (
         ""
       ) : categories.length === 1 ? (
-        <span>{`${categories[0].title}.`}</span>
+        <Category>{`${categories[0].title}.`}</Category>
       ) : categories.length === 2 ? (
-        <span>{`${categories[0].title} and ${categories[1].title}.`}</span>
+        <>
+          <Category>{categories[0].title}</Category> and{" "}
+          <Category>{categories[1].title}</Category>
+        </>
       ) : (
         categories.map((category, i) => (
-          <span>
+          <Category>
             {i === categories.length - 1
               ? ` and ${category.title}.`
               : ` ${category.title},`}{" "}
-          </span>
+          </Category>
         ))
       )}
-    </div>
+    </Meta>
   );
 };
 
