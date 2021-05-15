@@ -46,8 +46,7 @@ const Text = styled.div`
   padding: 1em;
 `;
 const ProjectName = styled.h3`
-  /* color: white; */
-  color: var(--grey);
+  color: var(--dark-grey);
   margin-top: 0;
   font-size: ${ms(2)};
   line-height: 0.75;
@@ -70,7 +69,7 @@ const ProjectName = styled.h3`
   }
   a {
     text-decoration: none;
-    color: var(--grey);
+    color: var(--dark-grey);
   }
 `;
 

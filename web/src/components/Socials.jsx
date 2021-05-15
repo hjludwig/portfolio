@@ -8,7 +8,7 @@ const List = styled.ul`
   display: flex;
 `;
 const SocialLink = styled.a`
-  color: var(--grey);
+  color: var(--dark-grey);
   margin-right: 1em;
   transition: color 0.25s ease;
   &:hover {
