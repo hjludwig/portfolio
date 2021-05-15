@@ -41,7 +41,16 @@ const Excerpt = styled.div`
 `;
 
 const SinglePost = ({ post }) => {
-  const { slug, title, publishedAt, _rawExcerpt, mainImage, categories } = post;
+  console.log(post);
+  const {
+    slug,
+    title,
+    publishedAt,
+    _rawExcerpt,
+    mainImage,
+    categories,
+    tags,
+  } = post;
   return (
     <Post>
       <PostImage>
@@ -51,7 +60,11 @@ const SinglePost = ({ post }) => {
         <Heading>
           <Link to={`/${slug.current}`}>{title}</Link>
         </Heading>
-        <PostMeta categories={categories} publishedAt={publishedAt} />
+        <PostMeta
+          categories={categories}
+          publishedAt={publishedAt}
+          tags={tags}
+        />
         <Excerpt>
           <SanityBlockContent blocks={_rawExcerpt} />
         </Excerpt>

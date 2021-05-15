@@ -19,7 +19,7 @@ const StyledProject = styled.div`
   }
   ul li {
     display: inline-block;
-    background: #f6f6f6;
+    background: var(--very-light-grey);
     font-size: 0.8em;
     padding: 0.25rem;
     margin-right: 0.25rem;

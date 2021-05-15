@@ -46,6 +46,7 @@ export const Global = createGlobalStyle`
         --dark-grey: #333333;
         --grey: #696969;
         --light-grey: #cccccc;
+        --very-light-grey: #f6f6f6;
         --brown: #ad8785;
     }
     body {

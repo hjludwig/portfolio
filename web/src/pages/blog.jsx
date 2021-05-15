@@ -18,6 +18,9 @@ const Blog = () => {
           categories {
             title
           }
+          tags {
+            value
+          }
           mainImage {
             asset {
               fluid(maxWidth: 900) {

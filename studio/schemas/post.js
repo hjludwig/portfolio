@@ -55,6 +55,11 @@ export default {
             ],
         },
         {
+            name: "tags",
+            title: "Tags",
+            type: "tags",
+        },
+        {
             name: "body",
             type: "bodyPortableText",
             title: "Body",

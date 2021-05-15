@@ -15,7 +15,21 @@ const Category = styled.span`
   color: var(--grey);
 `;
 
-const PostMeta = ({ categories, publishedAt }) => {
+const Tags = styled.ul`
+  list-style-type: none;
+  margin: 0.5em 0;
+`;
+const Tag = styled.li`
+  display: inline-block;
+  background: var(--very-light-grey);
+  font-family: "Source Sans", sans-serif;
+  color: var(--grey);
+  text-transform: none;
+  padding: 0.25rem;
+  margin-right: 0.25rem;
+`;
+
+const PostMeta = ({ categories, publishedAt, tags }) => {
   return (
     <Meta>
       Published {format(new Date(publishedAt), "MMMM d, yyyy")} in{" "}
@@ -36,6 +50,13 @@ const PostMeta = ({ categories, publishedAt }) => {
               : ` ${category.title},`}{" "}
           </Category>
         ))
+      )}
+      {tags && (
+        <Tags>
+          {tags.map(tag => (
+            <Tag>{tag.value}</Tag>
+          ))}
+        </Tags>
       )}
     </Meta>
   );
