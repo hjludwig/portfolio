@@ -5,6 +5,7 @@ import PostMeta from "../components/blog/PostMeta";
 import Layout from "../components/Layout";
 import { ms } from "../styles/global.css";
 import Img from "gatsby-image";
+import serializers from "./../components/serializers";
 
 const Post = styled.article`
   padding: 6rem 0 12rem 10vw;
@@ -21,6 +22,7 @@ const PostHeader = styled.header`
 const Heading = styled.h1`
   font-size: ${ms(3)};
   margin-top: 0;
+  line-height: 0.9;
   @media screen and (min-width: 760px) {
     font-size: ${ms(5)};
   }
@@ -36,6 +38,7 @@ const Heading = styled.h1`
     width: 50%;
     border-bottom: 1px solid var(--grey);
     margin-top: 0.5em;
+    margin-bottom: 0.5em;
   }
 `;
 
@@ -44,14 +47,18 @@ const Body = styled.div`
   font-size: ${ms(0)};
   color: var(--grey);
   margin-top: 4em;
-  p:first-of-type::first-letter {
-    color: var(--light-grey);
-    /* color: var(--brown); */
+  /* TODO: add drop cap paragraph style */
+  /* p:first-of-type:first-letter {
+    color: var(--dark-grey);
     font-size: 6em;
     line-height: 1;
     font-weight: 600;
     float: left;
-    margin: -0.25em 1rem 0 -0.5rem;
+    margin: -0.1em 1rem 0 -0.5rem;
+  } */
+  ul {
+    margin-left: 2em;
+    margin-bottom: 1em;
   }
 `;
 const PostImage = styled.div`
@@ -89,7 +96,7 @@ const blogPost = ({ data }) => {
           </PostImage>
         </PostHeader>
         <Body>
-          <SanityBlockContent blocks={_rawBody} />
+          <SanityBlockContent serializers={serializers} blocks={_rawBody} />
         </Body>
       </Post>
     </Layout>

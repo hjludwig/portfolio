@@ -17,6 +17,8 @@ export default {
                 { title: "H3", value: "h3" },
                 { title: "H4", value: "h4" },
                 { title: "Quote", value: "blockquote" },
+                // TODO: add DropCap paragraph style
+                // { title: "DropCap", value: "p class='drop-cap'" },
             ],
             lists: [
                 { title: "Bullet", value: "bullet" },
@@ -53,6 +55,9 @@ export default {
         {
             type: "mainImage",
             options: { hotspot: true },
+        },
+        {
+            type: "code",
         },
     ],
 };
