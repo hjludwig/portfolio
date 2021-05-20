@@ -9,9 +9,9 @@ import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
 
-import Header from "./Header";
 import { Global } from "../styles/global.css.js";
 import Footer from "./Footer";
+import Header from "./Header";
 
 const StyledLayout = styled.div``;
 
