@@ -75,7 +75,7 @@ const Heading2 = styled.h3`
 
 const Contact = () => {
   return (
-    <Wrapper>
+    <Wrapper id="contact">
       <Heading>Get in touch</Heading>
       <Form
         method="post"

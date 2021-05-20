@@ -8,28 +8,36 @@ import Img from "gatsby-image";
 import serializers from "./../components/serializers";
 
 const Post = styled.article`
-  padding: 6rem 0 12rem 10vw;
+  margin: 4rem 5vw;
+  @media screen and (min-width: 960px) {
+    margin: 6rem 0 12rem 10vw;
+  }
   h2 {
     text-transform: none;
     color: var(--dark-grey);
   }
 `;
 const PostHeader = styled.header`
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 2rem;
+  display: flex;
+  flex-direction: column;
+  @media screen and (min-width: 960px) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
 `;
 const Heading = styled.h1`
   font-size: ${ms(3)};
-  margin-top: 0;
   line-height: 0.9;
   @media screen and (min-width: 760px) {
     font-size: ${ms(5)};
   }
   @media screen and (min-width: 960px) {
+    margin-top: 0;
     margin-top: 4rem;
   }
   @media screen and (min-width: 1225px) {
+    /* margin-top: 0; */
     font-size: ${ms(6)};
   }
   &:after {
@@ -62,15 +70,22 @@ const Body = styled.div`
   }
 `;
 const PostImage = styled.div`
-  grid-column: 2/3;
-  grid-row: 1/-1;
+  order: -1;
+  @media screen and (min-width: 960px) {
+    grid-column: 2/3;
+    grid-row: 1/-1;
+  }
   .gatsby-image-wrapper {
-    height: ${ms(10)};
+    height: ${ms(8)};
+  }
+  @media screen and (min-width: 450px) {
+    .gatsby-image-wrapper {
+      height: ${ms(10)};
+    }
   }
 `;
 
 const blogPost = ({ data }) => {
-  console.log(data);
   const {
     title,
     categories,

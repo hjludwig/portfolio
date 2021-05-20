@@ -7,20 +7,33 @@ import styled from "styled-components";
 import { ms } from "../../styles/global.css";
 
 const Post = styled.article`
-  margin: 4em 10%;
+  margin: 2em 5vw;
   padding-bottom: 4em;
   border-bottom: 1px solid var(--light-grey);
-  display: grid;
-  grid-template-columns: 1fr 2fr;
-  grid-gap: 4em;
+  &:last-child {
+    border-bottom: none;
+  }
+  @media screen and (min-width: 960px) {
+    margin: 4em 10vw;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-gap: 4em;
+  }
 `;
 const PostImage = styled.div`
   .gatsby-image-wrapper {
-    height: ${ms(10)};
+    height: ${ms(8)};
+  }
+  @media screen and (min-width: 450px) {
+    .gatsby-image-wrapper {
+      height: ${ms(10)};
+    }
   }
 `;
 const Heading = styled.h1`
-  margin-top: 0;
+  @media screen and (min-width: 960px) {
+    margin-top: 0;
+  }
   a {
     color: var(--blue);
     text-decoration: none;
@@ -41,7 +54,6 @@ const Excerpt = styled.div`
 `;
 
 const SinglePost = ({ post }) => {
-  console.log(post);
   const {
     slug,
     title,

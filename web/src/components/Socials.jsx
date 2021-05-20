@@ -1,11 +1,11 @@
 import React from "react";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import styled from "styled-components";
-import { ms } from "../styles/global.css";
 
 const List = styled.ul`
   list-style-type: none;
   display: flex;
+  align-items: center;
 `;
 const SocialLink = styled.a`
   color: var(--dark-grey);
@@ -13,6 +13,9 @@ const SocialLink = styled.a`
   transition: color 0.25s ease;
   &:hover {
     color: var(--blue);
+  }
+  .icon {
+    vertical-align: middle;
   }
 `;
 
@@ -26,7 +29,7 @@ const Socials = () => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <FaLinkedin size={"2em"} />
+            <FaLinkedin size={"2em"} className="icon" />
           </SocialLink>
         </li>
         <li>
@@ -35,7 +38,7 @@ const Socials = () => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <FaGithub size={"2em"} />
+            <FaGithub size={"2em"} className="icon" />
           </SocialLink>
         </li>
       </List>

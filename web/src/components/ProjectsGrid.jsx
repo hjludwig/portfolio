@@ -1,7 +1,8 @@
 import React from "react";
-import { useStaticQuery, graphql } from "gatsby";
+import { useStaticQuery, graphql, Link } from "gatsby";
 import SingleProject from "./SingleProject";
 import styled from "styled-components";
+import { OutlineButton } from "./common/Button";
 
 const StyledContainer = styled.section`
   padding: 5rem 5vw;
@@ -29,6 +30,12 @@ const StyledProjectsGrid = styled.div`
     grid-template-columns: repeat(4, 1fr);
   }
   gap: 1rem;
+`;
+const Button = styled.div`
+  margin: 4rem;
+  display: flex;
+  /* align-items: center; */
+  justify-content: center;
 `;
 
 const ProjectsGrid = () => {
@@ -68,9 +75,17 @@ const ProjectsGrid = () => {
       <h2>My Work</h2>
       <StyledProjectsGrid>
         {projects.map(
-          project => project.isFeatured && <SingleProject project={project} />
+          project =>
+            project.isFeatured && (
+              <SingleProject key={project.id} project={project} />
+            )
         )}
       </StyledProjectsGrid>
+      <Button>
+        <Link to="/all-projects">
+          <OutlineButton>See all projects</OutlineButton>
+        </Link>
+      </Button>
     </StyledContainer>
   );
 };

@@ -96,7 +96,7 @@ const SingleProject = ({ project }) => {
         {category && <Overline>{category.category}</Overline>}
 
         <ProjectName>
-          <Link to={slug.current} title="View Project">
+          <Link to={`/${slug.current}`} title="View Project">
             {name}{" "}
             <Icon>
               <FaArrowRight size={"0.5em"} className={"icon"} />

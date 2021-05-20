@@ -186,19 +186,17 @@ const Project = ({ data }) => {
           </ToolsList>
           <Buttons>
             {link && (
-              <OutlineButton primary>
-                <a href={link} target="blank">
-                  Visit Project
-                </a>
-              </OutlineButton>
+              <a href={link} target="blank">
+                <OutlineButton primary>Visit Project</OutlineButton>
+              </a>
             )}
             {github && (
-              <OutlineButton>
-                <a href={github} target="_blank" rel="noopener noreferrer">
+              <a href={github} target="_blank" rel="noopener noreferrer">
+                <OutlineButton>
                   <FaGithub className={"git-icon"} size={"1.5em"} />
                   Code
-                </a>
-              </OutlineButton>
+                </OutlineButton>{" "}
+              </a>
             )}
           </Buttons>
         </Main>
@@ -217,15 +215,15 @@ const Project = ({ data }) => {
             <Icon>
               <FaArrowLeft size={"0.5em"} className={"icon icon-left"} />
             </Icon>
-            Back to Projects
+            Featured Projects
           </Link>
-          {/* <Divider>|</Divider>
+          <Divider>|</Divider>
           <Link to="/all-projects">
             All projects{" "}
             <Icon>
               <FaArrowRight size={"0.5em"} className={"icon icon-right"} />
             </Icon>
-          </Link> */}
+          </Link>
         </Navigation>
       </ProjectStyles>
     </Layout>

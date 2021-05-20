@@ -2,7 +2,6 @@ import React from "react";
 import { FaWrench } from "react-icons/fa";
 import styled from "styled-components";
 import { ms } from "../styles/global.css";
-import { sectionPadding } from "../styles/mixins";
 
 const StyledFooter = styled.footer`
   padding: 2rem 5% 2em 1em;

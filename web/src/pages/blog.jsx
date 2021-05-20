@@ -7,9 +7,10 @@ import SinglePost from "../components/blog/SinglePost";
 const Blog = () => {
   const data = useStaticQuery(graphql`
     query PostsQuery {
-      posts: allSanityPost {
+      posts: allSanityPost(sort: { order: DESC, fields: publishedAt }) {
         nodes {
           title
+          id
           slug {
             current
           }
@@ -32,13 +33,12 @@ const Blog = () => {
       }
     }
   `);
-
   return (
     <Layout>
       <SEO title="blog" />
       <div>
         {data.posts.nodes.map(post => (
-          <SinglePost post={post} />
+          <SinglePost post={post} key={post.id} />
         ))}
       </div>
     </Layout>

@@ -28,7 +28,7 @@ const ToolsList = ({ tools }) => {
       <Heading>{tools[0].category.name}</Heading>
       <List>
         {tools.map(tool => (
-          <Tool tool={tool} />
+          <Tool tool={tool} key={tool.id} />
         ))}
       </List>
     </div>

@@ -18,6 +18,23 @@ import {
 } from "react-icons/si";
 import styled from "styled-components";
 
+const Icon = styled.span`
+  background-image: url(${sanityIconBG});
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: inline-block;
+  width: 2em;
+  height: 2em;
+  vertical-align: middle;
+  /* margin-right: 0.25em; */
+  position: relative;
+  top: -2px;
+`;
+const SanityIcon = ({ className }) => {
+  return <Icon title="Sanity.io" className={className}></Icon>;
+};
+
 const ToolIcon = ({ name }) => {
   const iconProps = {
     title: name,
@@ -56,23 +73,6 @@ const ToolIcon = ({ name }) => {
   ) : (
     <FaGlobe {...iconProps} />
   );
-};
-
-const SanityIcon = ({ className }) => {
-  const Icon = styled.span`
-    background-image: url(${sanityIconBG});
-    background-size: contain;
-    background-position: center;
-    background-repeat: no-repeat;
-    display: inline-block;
-    width: 2em;
-    height: 2em;
-    vertical-align: middle;
-    /* margin-right: 0.25em; */
-    position: relative;
-    top: -2px;
-  `;
-  return <Icon title="Sanity.io" className={className}></Icon>;
 };
 
 export default ToolIcon;

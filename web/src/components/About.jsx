@@ -1,10 +1,11 @@
 import React from "react";
-import { graphql, useStaticQuery } from "gatsby";
+import { graphql, Link, useStaticQuery } from "gatsby";
 import Image from "gatsby-image";
 import styled from "styled-components";
-import { fullHeight, sectionPadding } from "../styles/mixins";
+import { sectionPadding } from "../styles/mixins";
 import { ms } from "../styles/global.css";
 import BlockContent from "@sanity/block-content-to-react";
+import { OutlineButton } from "./common/Button";
 
 const StyledBio = styled.section`
   @media screen and (min-width: 1020px) {
@@ -12,7 +13,9 @@ const StyledBio = styled.section`
     grid-template-columns: 2fr 1fr;
     column-gap: 5%;
   }
-  font-size: 125%;
+  p {
+    font-size: 125%;
+  }
   ${sectionPadding}
   min-height: 90vh;
   align-items: center;
@@ -39,6 +42,9 @@ const Bio = styled.div`
     }
     margin-top: 0;
   }
+  button {
+    font-size: 100%;
+  }
 `;
 
 const About = () => {
@@ -58,10 +64,14 @@ const About = () => {
   `);
   const { _rawBio, image } = data.profile;
   return (
-    <StyledBio>
+    <StyledBio id="about">
       <Overline>About Me</Overline>
       <Bio>
         <BlockContent blocks={_rawBio} />
+
+        <Link to="/covid-19-and-a-new-career">
+          <OutlineButton>My Story</OutlineButton>
+        </Link>
       </Bio>
       <Image fluid={image.asset.fluid} />
     </StyledBio>
