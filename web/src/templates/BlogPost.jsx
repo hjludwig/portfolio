@@ -6,6 +6,7 @@ import Layout from "../components/Layout";
 import { ms } from "../styles/global.css";
 import Img from "gatsby-image";
 import serializers from "./../components/serializers";
+import SEO from "../components/seo";
 
 const Post = styled.article`
   margin: 4rem 5vw;
@@ -96,6 +97,7 @@ const blogPost = ({ data }) => {
   } = data.post;
   return (
     <Layout>
+      <SEO title={title} />
       <Post>
         <PostHeader>
           <div>

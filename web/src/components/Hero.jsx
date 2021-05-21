@@ -1,5 +1,5 @@
 import React from "react";
-import { graphql, useStaticQuery } from "gatsby";
+import { graphql, Link, useStaticQuery } from "gatsby";
 import styled, { keyframes } from "styled-components";
 import { ms } from "../styles/global.css";
 import { BiChevronDown } from "react-icons/bi";
@@ -14,7 +14,7 @@ const StyledHero = styled.section`
   padding: 0 10%;
   text-align: center;
   line-height: 1;
-  z-index: -1;
+  /* z-index: -1; */
   > * {
     letter-spacing: -0.04em;
   }
@@ -53,13 +53,14 @@ const pulseAnimation = keyframes`
   10% {transform: scale(1.5);}
   20% {transform: scale(1);}
 `;
-const Arrow = styled.div`
+const ArrowLink = styled(Link)`
   color: var(--light-grey);
   position: absolute;
   bottom: 1em;
   left: 50%;
   margin-left: -2em;
   animation: ${pulseAnimation} 5s ease-out infinite;
+  z-index: 99;
 `;
 
 const Hero = () => {
@@ -83,9 +84,9 @@ const Hero = () => {
     <StyledHero>
       <Intro>I’m {name}.</Intro>
       <Tagline>{tagline}</Tagline>
-      <Arrow>
+      <ArrowLink to="/#work">
         <BiChevronDown size="4em" />
-      </Arrow>
+      </ArrowLink>
     </StyledHero>
   );
 };

@@ -12,6 +12,7 @@ const StyledHeader = styled.header`
   height: 10vh;
   align-items: center;
   padding-left: 1em;
+  z-index: 99;
 `;
 const Logo = styled.div`
   color: white;

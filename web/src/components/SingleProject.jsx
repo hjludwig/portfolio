@@ -6,6 +6,20 @@ import { ms } from "../styles/global.css";
 import { overLine } from "../styles/mixins";
 import { FaArrowRight } from "react-icons/fa";
 
+const ProjectLink = styled(Link)`
+  text-decoration: none;
+  color: var(--grey);
+  &:hover {
+    h3 {
+      color: var(--blue);
+      transition: color 0.25s ease;
+    }
+    .icon {
+      transform: translateX(0);
+    }
+  }
+`;
+
 const StyledProject = styled.div`
   padding-bottom: 0.5rem;
   box-shadow: #ccc 0 0 5px 0;
@@ -58,19 +72,6 @@ const ProjectName = styled.h3`
     margin-top: 0.5em;
     /* margin-bottom: 1em; */
   }
-  &:hover {
-    a {
-      color: var(--blue);
-      transition: color 0.25s ease;
-    }
-    .icon {
-      transform: translateX(0);
-    }
-  }
-  a {
-    text-decoration: none;
-    color: var(--dark-grey);
-  }
 `;
 
 const Icon = styled.span`
@@ -88,28 +89,28 @@ const Icon = styled.span`
 const SingleProject = ({ project }) => {
   const { name, category, image, tools, slug } = project;
   return (
-    <StyledProject>
-      <ProjectImage>
-        <Img fluid={image.asset.fluid} alt={name} />
-      </ProjectImage>
-      <Text>
-        {category && <Overline>{category.category}</Overline>}
+    <ProjectLink to={`/${slug.current}`} title="View Project">
+      <StyledProject>
+        <ProjectImage>
+          <Img fluid={image.asset.fluid} alt={name} />
+        </ProjectImage>
+        <Text>
+          {category && <Overline>{category.category}</Overline>}
 
-        <ProjectName>
-          <Link to={`/${slug.current}`} title="View Project">
+          <ProjectName>
             {name}{" "}
             <Icon>
               <FaArrowRight size={"0.5em"} className={"icon"} />
             </Icon>
-          </Link>
-        </ProjectName>
-        <ul>
-          {tools.map(tool => (
-            <li key={tool.id}>{tool.name}</li>
-          ))}
-        </ul>
-      </Text>
-    </StyledProject>
+          </ProjectName>
+          <ul>
+            {tools.map(tool => (
+              <li key={tool.id}>{tool.name}</li>
+            ))}
+          </ul>
+        </Text>
+      </StyledProject>
+    </ProjectLink>
   );
 };
 

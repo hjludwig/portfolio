@@ -35,7 +35,7 @@ const Blog = () => {
   `);
   return (
     <Layout>
-      <SEO title="blog" />
+      <SEO title="Blog" />
       <div>
         {data.posts.nodes.map(post => (
           <SinglePost post={post} key={post.id} />

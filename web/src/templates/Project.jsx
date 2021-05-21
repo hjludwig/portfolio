@@ -8,6 +8,7 @@ import { ms } from "../styles/global.css";
 import BlockContent from "@sanity/block-content-to-react";
 import ToolIcon from "../components/ToolIcon";
 import { FaArrowLeft, FaArrowRight, FaGithub } from "react-icons/fa";
+import SEO from "../components/seo";
 
 const ProjectStyles = styled.div`
   @media screen and (min-width: 960px) {
@@ -171,6 +172,7 @@ const Project = ({ data }) => {
   } = data.project;
   return (
     <Layout>
+      <SEO title={name} />
       <ProjectStyles>
         <Main>
           <Name>{name}</Name>
