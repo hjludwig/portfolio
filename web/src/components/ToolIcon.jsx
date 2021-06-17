@@ -15,6 +15,7 @@ import {
   SiJavascript,
   SiPhp,
   SiStyledComponents,
+  SiTailwindcss,
 } from "react-icons/si";
 import styled from "styled-components";
 
@@ -68,6 +69,8 @@ const ToolIcon = ({ name }) => {
     <FaFigma {...iconProps} />
   ) : name === "Styled Components" ? (
     <SiStyledComponents {...iconProps} />
+  ) : name === "Tailwind" ? (
+    <SiTailwindcss {...iconProps} />
   ) : name === "Sanity" ? (
     <SanityIcon {...iconProps} />
   ) : (
